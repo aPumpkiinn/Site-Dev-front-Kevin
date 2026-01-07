@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+}
+
+#canvas-area {
+    width: 1024px;
+    height: 768px;
+    background-color: #1469af;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+    border: 2px solid #000;
+}
+
+.goutte {
+    position: absolute;
+    background-image: url('gouttes.png');
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: splash 0.8s steps(1) forwards;
+}
+
+@keyframes splash {
+    0%   { width: 136px; height: 145px; background-position: 0px 0px; }
+    8%   { width: 192px; height: 145px; background-position: -140px 0px; }
+    16%  { width: 328px; height: 145px; background-position: -336px 0px; }
+    24%  { width: 332px; height: 145px; background-position: -668px 0px; }
+    32%  { width: 332px; height: 144px; background-position: 0px -148px; }
+    40%  { width: 329px; height: 144px; background-position: -335px -148px; }
+    48%  { width: 332px; height: 144px; background-position: -668px -148px; }
+    56%  { width: 332px; height: 144px; background-position: 0px -296px; }
+    64%  { width: 328px; height: 144px; background-position: -336px -296px; }
+    72%  { width: 332px; height: 144px; background-position: -668px -296px; }
+    80%  { width: 332px; height: 144px; background-position: 0px -442px; }
+    88%  { width: 329px; height: 144px; background-position: -335px -442px; }
+    96%  { width: 332px; height: 144px; background-position: -668px -442px; }
+    100% { opacity: 0; }
+}

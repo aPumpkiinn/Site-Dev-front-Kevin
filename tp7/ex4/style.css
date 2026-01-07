@@ -1,0 +1,34 @@
+body {
+    color: #eee;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container2 {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.boite {
+    text-align: center;
+    color: black ;
+}
+
+canvas {
+    border: 1px solid #d000ff;
+    border-radius: 20px;
+}

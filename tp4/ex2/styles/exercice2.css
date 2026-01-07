@@ -1,0 +1,95 @@
+body {
+    background-color: #C0C0C0;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+#telechargement {
+    list-style: none;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+#telechargement li {
+    border-bottom: 2px solid #333;
+    padding: 15px 0;
+}
+
+#telechargement a {
+    color: #800000;
+    text-decoration: underline;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+/* --- GÉNÉRATION DU TEXTE DU LIEN --- */
+/* Comme les balises <a> sont vides, on affiche la valeur du href */
+#telechargement a::after {
+    content: attr(href);
+    margin-left: 10px;
+}
+
+/* --- AJOUT DES ICÔNES (À GAUCHE) --- */
+#telechargement a::before {
+    margin-right: 15px;
+}
+
+#telechargement a[href$=".pdf"]::before { content: url('../images/pdf.png'); }
+#telechargement a[href$=".doc"]::before { content: url('../images/doc.png'); }
+#telechargement a[href$=".xls"]::before { content: url('../images/xls.png'); }
+#telechargement a[href$=".png"]::before { content: url('../images/png.png'); }
+#telechargement a[href$=".rtf"]::before { content: url('../images/rtf.png'); }
+#telechargement a[href$=".zip"]::before { content: url('../images/zip.png'); }
+#telechargement a[href$=".svg"]::before { content: url('../images/svg.png'); }
+#telechargement a[href$=".ods"]::before { content: url('../images/ods.png'); }
+#telechargement a[href$=".ppt"]::before { content: url('../images/ppt.png'); }
+
+/* --- AJOUT DES DRAPEAUX (À DROITE) --- */
+/* On rajoute l'image du drapeau après le texte déjà généré */
+#telechargement a[hreflang="fr"]::after {
+    content: attr(href) " ";
+    background: url('../images/fr.png') no-repeat right center;
+    padding-right: 30px; /* Espace pour le drapeau */
+}
+
+#telechargement a[hreflang="en"]::after {
+    content: attr(href) " ";
+    background: url('../images/en.png') no-repeat right center;
+    padding-right: 30px;
+}
+
+.tp-table {
+    width: 100%;
+    border-collapse: collapse; /* Fusionne les bordures */
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+.tp-table th, .tp-table td {
+    border: 1px solid #000; /* Bordure noire simple */
+    padding: 12px;
+    text-align: left;
+}
+
+.tp-table th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+/* RESTE DU STYLE (Learning notes) */
+.learning-notes {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #000;
+    font-style: italic;
+    color: #444;
+}

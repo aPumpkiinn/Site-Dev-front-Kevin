@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutoriel Parallaxe - TP5</title>
+    <link rel="stylesheet" href="exercice6.css">
+</head>
+<body>
+
+    <section class="parallax section-1">
+        <h1>L'Effet Parallaxe</h1>
+    </section>
+
+    <section class="buffer">
+        <h2>C'est quoi le parallaxe ?</h2>
+        <p>Le parallaxe est un effet visuel où l'image d'arrière-plan se déplace plus lentement que le contenu au premier plan lors du défilement (scroll), créant une illusion de profondeur.</p>
+    </section>
+
+    <section class="parallax section-2">
+        <div class="glass-box">
+            <h2>Étape 1 : Le HTML</h2>
+            <p>Créez simplement des blocs <code>&lt;section&gt;</code>. Certains contiendront vos images de fond, d'autres votre texte explicatif.</p>
+        </div>
+    </section>
+
+    <section class="buffer">
+        <h2>Étape 2 : Le secret du CSS</h2>
+        <p>Le secret réside dans une seule ligne de code CSS : <code>background-attachment: fixed;</code>.</p>
+        <p>Cette propriété indique au navigateur que l'image de fond ne doit pas bouger par rapport à la fenêtre, même si on descend dans la page.</p>
+    </section>
+
+    <section class="parallax section-3">
+        <h1>Magique, non ?</h1>
+    </section>
+
+    <footer class="acquis">
+        <h3>Compétences acquises :</h3>
+        <ul>
+            <li>Maîtrise de <strong>background-attachment: fixed</strong> pour l'immersion.</li>
+            <li>Utilisation de <strong>background-size: cover</strong> pour des images plein écran.</li>
+            <li>Gestion de la profondeur visuelle sans JavaScript.</li>
+        </ul>
+    </footer>
+
+</body>
+</html>

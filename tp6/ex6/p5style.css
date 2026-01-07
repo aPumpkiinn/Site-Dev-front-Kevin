@@ -1,0 +1,120 @@
+/* DÉCLARATION DE LA POLICE PERSONA 5 */
+@font-face {
+    font-family: 'P5MenuFont';
+    src: url('Persona5MenuFontPrototype-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.banner {
+    width: 728px;
+    height: 90px;
+    background: #000;
+    position: relative;
+    overflow: hidden; /* */
+    border: 3px solid #dfc34e;
+    box-shadow: 0 0 25px rgba(211, 18, 18, 0.4);
+}
+
+/* ÉTOILE GRISE */
+.banner::after {
+    content: '';
+    position: absolute;
+    top: -50px; left: -20px;
+    width: 200px; height: 200px;
+    background: #222;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); /* */
+    z-index: 1;
+    opacity: 0;
+}
+
+/* FOND ROUGE */
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%; height: 100%;
+    background: #d31212;
+    clip-path: polygon(25% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 2;
+    opacity: 0;
+}
+
+/* ANIMATIONS (is-visible) */
+.banner.is-visible::after { animation: starIn 0.5s ease-out forwards; }
+.banner.is-visible::before { animation: redSlide 0.4s cubic-bezier(0.23, 1, 0.32, 1) forwards 0.2s; }
+.banner.is-visible .banner-img { animation: logoPop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.5s; }
+.banner.is-visible .text-main { animation: titleIn 0.3s ease-out forwards 0.7s, jitter 0.15s infinite 1s; }
+.banner.is-visible .banner-cta { animation: ctaIn 0.4s ease-out forwards 0.9s; }
+
+@keyframes starIn { from { transform: rotate(-45deg) scale(0.5); opacity: 0; } to { transform: rotate(-10deg) scale(1); opacity: 0.6; } }
+@keyframes redSlide { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+@keyframes logoPop { from { transform: translateX(-50px) rotate(-10deg); opacity: 0; } to { opacity: 1; transform: translateX(0) rotate(-5deg); } }
+@keyframes titleIn { from { transform: skewX(-12deg) scale(1.5); opacity: 0; } to { opacity: 1; transform: skewX(-12deg) scale(1); } }
+@keyframes ctaIn { from { transform: translateY(20px); opacity: 0; } to { opacity: 1; transform: translateY(0); } }
+@keyframes jitter { 0%, 100% { transform: skewX(-12deg) translate(0,0); } 50% { transform: skewX(-12deg) translate(1px, -1px); } }
+
+/* CONTENU */
+.main-container {
+    position: relative;
+    z-index: 10;
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.left-group { display: flex; align-items: center; }
+
+.banner-img img { 
+    height: 65px; 
+    transform: rotate(-5deg) skewX(-5deg);
+    filter: drop-shadow(3px 3px 0px #000); 
+}
+
+.text-main { 
+    font-family: 'P5MenuFont', sans-serif;
+    color: white; 
+    font-size: 32px; 
+    text-transform: uppercase; 
+    text-shadow: 4px 4px 0 #d31212; 
+    margin: 0; 
+}
+
+/* BOUTON ARIAL BOLD ITALIC CORRIGÉ */
+.banner-cta {
+    font-family: "Arial Black", Arial, sans-serif; /* Utilisation de Arial Black pour forcer le gras épais */
+    font-weight: 900;    /* Valeur maximale pour le gras */
+    font-style: italic;  /* Inclinaison italique */
+    background: white;
+    color: black;
+    border: none;
+    padding: 10px 25px;
+    font-size: 18px;
+    letter-spacing: -0.5px; /* Resserre un peu pour le style P5 */
+    clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.banner-cta:hover { background: #dfc34e; transform: scale(1.1); }
+
+.diagonal-lines { position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.05) 10px, rgba(255,255,255,0.05) 11px); z-index: 3; }
+.flash { position: absolute; inset: 0; background: white; opacity: 0; z-index: 100; pointer-events: none; }
+.flash-active { animation: flashAnim 0.4s ease-out; }
+@keyframes flashAnim { 0% { opacity: 0.8; } 100% { opacity: 0; } }

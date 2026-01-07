@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_exercice_local.css">
+    <title>TP2 - Flexbox Cheat Sheet</title>
+</head>
+<body>
+
+<div class="board">
+    <header class="board-header">
+        <div class="title-group">
+            <h1>FLEX CONTAINER</h1>
+            <p>(élément parent)</p>
+        </div>
+        <div class="dotted-group">
+            <div class="dotted">display: flex</div>
+            <div class="dotted">display: inline-flex</div>
+        </div>
+    </header>
+
+    <div class="white-frame">
+        <table class="main-table">
+            <thead>
+                <tr>
+                    <th>flex-direction</th>
+                    <th>flex-wrap</th>
+                    <th>justify-content<br><span>Axe principal (Main)</span></th>
+                    <th>align-items<br><span>Axe secondaire (Cross)</span></th>
+                    <th>align-content</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <span class="txt-red">row</span><br>
+                        <span class="txt-teal">row-reverse</span><br>
+                        <span class="txt-teal">column</span><br>
+                        <span class="txt-teal">column-reverse</span>
+                    </td>
+                    <td>
+                        <span class="txt-red">no-wrap</span><br>
+                        <span class="txt-teal">wrap</span><br>
+                        <span class="txt-teal">wrap-reverse</span>
+                    </td>
+                    <td>
+                        <span class="txt-red">flex-start</span><br>
+                        <span class="txt-teal">flex-end</span><br>
+                        <span class="txt-teal">center</span><br>
+                        <span class="txt-teal">space-between</span><br>
+                        <span class="txt-teal">space-around</span><br>
+                        <span class="txt-teal">space-evenly</span>
+                    </td>
+                    <td>
+                        <span class="txt-teal">flex-start</span><br>
+                        <span class="txt-teal">flex-end</span><br>
+                        <span class="txt-teal">center</span><br>
+                        <span class="txt-teal">baseline</span><br>
+                        <span class="txt-red">stretch</span>
+                    </td>
+                    <td>
+                        <span class="txt-teal">flex-start</span><br>
+                        <span class="txt-teal">flex-end</span><br>
+                        <span class="txt-teal">center</span><br>
+                        <span class="txt-teal">space-between</span><br>
+                        <span class="txt-teal">space-around</span><br>
+                        <span class="txt-red">stretch</span>
+                    </td>
+                </tr>
+                <tr class="flex-flow-banner">
+                    <td colspan="5">
+                        FLEX-FLOW
+                        <div class="txt-teal">flex-direction + flex-wrap</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <section class="items-header">
+        <div class="title-group">
+            <h2>FLEX ITEMS</h2>
+            <p>(élément enfant)</p>
+        </div>
+        <div class="dotted-large">
+            <div class="item-box">ITEM 1</div>
+            <div class="item-box">ITEM 2</div>
+            <div class="item-box">ITEM 3</div>
+        </div>
+    </section>
+
+    <div class="white-frame">
+        <table class="bottom-table">
+            <tbody>
+                <tr>
+                    <td class="label">order</td>
+                    <td class="value">0</td>
+                    <td class="shorthand" rowspan="5">
+                        <span class="txt-teal">flex</span> : <span class="txt-red">0 1 auto</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">flex-grow</td>
+                    <td class="value">0</td>
+                </tr>
+                <tr>
+                    <td class="label">flex-shrink</td>
+                    <td class="value">1</td>
+                </tr>
+                <tr>
+                    <td class="label">flex-basis</td>
+                    <td class="value">auto</td>
+                </tr>
+                <tr>
+                    <td class="label">align-self</td>
+                    <td class="value">auto</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <section class="acquis-container centered-content">
+        <hr class="separator">
+        <div class="learning-notes">
+            <ul>
+                <h2>Compétences acquises</h2>
+                <li><strong>Modèle Flexbox</strong> : Compréhension des relations entre conteneur parent et éléments enfants.</li>
+                <li><strong>Axes de direction</strong> : Maîtrise de l'axe principal (Main Axis) et de l'axe secondaire (Cross Axis).</li>
+                <li><strong>Alignement dynamique</strong> : Utilisation de justify-content et align-items pour centrer du contenu.</li>
+                <li><strong>Propriétés des Items</strong> : Gestion de la flexibilité individuelle avec flex-grow et flex-shrink.</li>
+            </ul>
+        </div>
+
+        <div class="learning-notes">
+            <h2>Ce que j'ai appris concrètement</h2>
+            <p>
+                Ce TP m'a permis de comprendre comment créer des mises en page modernes et réactives sans utiliser de flottements. 
+                J'ai appris que le Flexbox simplifie énormément l'alignement vertical, une tâche complexe en CSS classique. 
+                L'usage des classes utilitaires pour les couleurs m'a aussi aidé à mieux visualiser les différentes propriétés.
+            </p>
+        </div>
+    </section>
+</div>
+
+</body>
+
+</html>
+

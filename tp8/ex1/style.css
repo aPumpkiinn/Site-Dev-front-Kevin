@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+/* --- LE CANVAS --- */
+#game-canvas {
+    width: 600px;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #000;
+    background-image: url('fond.png');
+    background-repeat: repeat-x;
+    background-size: auto 100%;
+    animation: scrollBackground 6s linear infinite;
+}
+
+/* --- LE PERSONNAGE (MARIO) --- */
+#mario {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    bottom: 100px;
+    left: 230px;
+    background-image: url('mario.png');
+    background-size: 500px 500px;
+    animation: marioRun 0.5s steps(5) infinite;
+}
+
+/* --- ANIMATIONS --- */
+
+
+@keyframes scrollBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -1000px 0; 
+    }
+}
+
+
+@keyframes marioRun {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: -500px 0;
+    }
+}
+
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+.tp-table {
+    width: 100%;
+    border-collapse: collapse; /* Fusionne les bordures */
+    margin: 20px 0;
+    background-color: #fff;
+}
+
+.tp-table th, .tp-table td {
+    border: 1px solid #000; /* Bordure noire simple */
+    padding: 12px;
+    text-align: left;
+}
+
+.tp-table th {
+    background-color: #eee;
+    font-weight: bold;
+}
+
+/* RESTE DU STYLE (Learning notes) */
+.learning-notes {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid #000;
+    font-style: italic;
+    color: #444;
+}
+
+.nav {
+    text-align: center;
+    padding: 50px;
+    gap: 20px;
+}
+
+body{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}

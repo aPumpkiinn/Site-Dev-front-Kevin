@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+/* Style commun pour les sections parallaxe */
+.parallax {
+    height: 100vh; /* Prend toute la hauteur de l'écran */
+    background-attachment: fixed; /* L'IMAGE NE BOUGE PAS AU SCROLL */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Images spécifiques (Remplace par tes fichiers) */
+.section-1 { background-image: url('https://picsum.photos/id/1015/1920/1080'); }
+.section-2 { background-image: url('https://picsum.photos/id/1016/1920/1080'); }
+.section-3 { background-image: url('https://picsum.photos/id/1018/1920/1080'); }
+
+/* Sections de texte blanc entre les images */
+.buffer {
+    padding: 80px 20px;
+    background-color: white;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 { font-size: 4rem; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+
+/* Petit effet de boîte en verre */
+.glass-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Style de ton pied de page "Acquis" */
+.acquis {
+    background: #222;
+    color: white;
+    padding: 40px;
+    text-align: center;
+}

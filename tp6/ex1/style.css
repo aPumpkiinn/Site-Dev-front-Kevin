@@ -1,0 +1,45 @@
+/* Container principal */
+.container {
+    position: relative;
+    width: 500px;        /* ajuste selon ton image */
+    height: 300px;
+    overflow: hidden;
+    border: 3px solid #333;
+    margin: 50px auto;
+}
+
+/* Image */
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Rideau */
+.curtain {
+    position: absolute;
+    inset: 0;
+    background: rgb(20, 20, 20);
+
+    /* pivot du rideau - pages 1-4 du PDF */
+    transform-origin: left center;
+
+    /* fermé par défaut */
+    transform: scaleX(1);
+
+    /* Transition fluide (page transitions du PDF) */
+    transition: transform 0.8s cubic-bezier(0.50, 0.05, 0.1, 1);
+}
+
+/* Ouverture au hover */
+.container:hover .curtain {
+    transform: scaleX(0);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.h1 {
+    display: flex;
+}
